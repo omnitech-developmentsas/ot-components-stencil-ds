@@ -20,6 +20,28 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface OtTypography {
+        /**
+          * The HTML tag to render
+          * @default 'p'
+          * @type {'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'}
+         */
+        "as": 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span';
+        /**
+          * The color of the text
+          * @default 'light'
+          * @type {'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light'    * | 'dark'}
+          * @variants primary, secondary, success, danger, warning, info, light, dark
+          * @group Colors
+          * @group Text
+          * @group Typography
+          * @group Variants
+          * @group Basic
+          * @group Advanced
+          * @group Custom
+         */
+        "color": keyof typeof this.ColorClasses;
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +50,15 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLOtTypographyElement extends Components.OtTypography, HTMLStencilElement {
+    }
+    var HTMLOtTypographyElement: {
+        prototype: HTMLOtTypographyElement;
+        new (): HTMLOtTypographyElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "ot-typography": HTMLOtTypographyElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +76,31 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface OtTypography {
+        /**
+          * The HTML tag to render
+          * @default 'p'
+          * @type {'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'}
+         */
+        "as"?: 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span';
+        /**
+          * The color of the text
+          * @default 'light'
+          * @type {'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light'    * | 'dark'}
+          * @variants primary, secondary, success, danger, warning, info, light, dark
+          * @group Colors
+          * @group Text
+          * @group Typography
+          * @group Variants
+          * @group Basic
+          * @group Advanced
+          * @group Custom
+         */
+        "color"?: keyof typeof this.ColorClasses;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "ot-typography": OtTypography;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +108,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "ot-typography": LocalJSX.OtTypography & JSXBase.HTMLAttributes<HTMLOtTypographyElement>;
         }
     }
 }
