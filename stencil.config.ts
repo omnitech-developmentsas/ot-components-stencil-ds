@@ -1,7 +1,10 @@
 import { Config } from '@stencil/core';
+import { postcss } from '@stencil/postcss';
+import tailwindcss from 'tailwindcss';
 
 export const config: Config = {
   namespace: 'ot-components-stencil-ds',
+  globalStyle: 'src/global/tailwind.css',
   outputTargets: [
     {
       type: 'dist',
@@ -23,4 +26,9 @@ export const config: Config = {
   testing: {
     browserHeadless: "new",
   },
+  plugins: [
+    postcss({
+      plugins: [tailwindcss()],
+    }),
+  ],
 };

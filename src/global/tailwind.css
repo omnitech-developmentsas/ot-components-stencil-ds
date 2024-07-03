@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --primary-50: #f5f7fa;
+  --primary-100: #eaeef4;
+  --primary-200: #d1dae6;
+  --primary-300: #a8bad1;
+  --primary-400: #7996b7;
+  --primary-500: #58789f;
+  --primary-600: #48658c;
+  --primary-700: #384e6c;
+  --primary-800: #31425b;
+  --primary-900: #2d3a4d;
+  --primary-950: #1e2633;
+}
