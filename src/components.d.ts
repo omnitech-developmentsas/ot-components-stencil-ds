@@ -31,14 +31,6 @@ export namespace Components {
           * The color of the text
           * @default 'light'
           * @type {'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light'    * | 'dark'}
-          * @variants primary, secondary, success, danger, warning, info, light, dark
-          * @group Colors
-          * @group Text
-          * @group Typography
-          * @group Variants
-          * @group Basic
-          * @group Advanced
-          * @group Custom
          */
         "color": keyof typeof this.ColorClasses;
     }
@@ -87,14 +79,6 @@ declare namespace LocalJSX {
           * The color of the text
           * @default 'light'
           * @type {'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light'    * | 'dark'}
-          * @variants primary, secondary, success, danger, warning, info, light, dark
-          * @group Colors
-          * @group Text
-          * @group Typography
-          * @group Variants
-          * @group Basic
-          * @group Advanced
-          * @group Custom
          */
         "color"?: keyof typeof this.ColorClasses;
     }

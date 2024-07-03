@@ -35,14 +35,6 @@ export class OtTypography {
    * @default 'light'
    * @type {'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light'
    * | 'dark'}
-   * @variants primary, secondary, success, danger, warning, info, light, dark
-   * @group Colors
-   * @group Text
-   * @group Typography
-   * @group Variants
-   * @group Basic
-   * @group Advanced
-   * @group Custom
    */
   @Prop() color: keyof typeof this.ColorClasses = 'light';
 
@@ -59,12 +51,3 @@ export class OtTypography {
     );
   }
 }
-
-/* Tailwind CSS Class Directives
- * @tailwind utilities;
- * @variants responsive, hover, focus, active, group-hover;
- * @layer utilities {
- *   .text-primary-600, .text-secondary-500, .text-green-500, .text-red-500, .text-yellow-500, .text-blue-500, .text-black, .text-white {}
- *   .text-4xl, .text-3xl, .text-2xl, .text-xl, .text-lg, .text-base {}
- * }
- */
